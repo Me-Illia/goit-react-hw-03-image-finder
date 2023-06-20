@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { Component } from 'react';
 import { ModalField, Overlay } from './Modal.styled';
 import { createPortal } from 'react-dom';
@@ -35,3 +36,8 @@ export class Modal extends Component {
     );
   }
 }
+
+Modal.propTypes = {
+  bigImage: PropTypes.string.isRequired,
+  onClose: PropTypes.func.isRequired,
+};
