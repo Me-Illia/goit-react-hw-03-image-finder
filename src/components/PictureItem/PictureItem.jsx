@@ -1,31 +1,12 @@
-import PropTypes from 'prop-types';
-import { Li, Img } from './PictureItem.styled';
+import { PictureItem } from 'components/Pictures/Pictures';
+import { Ul } from './PictureItem.styled';
 
-export const PictureItem = ({ items, onClick }) => {
-  // console.log(items);
+export const Pictures = ({ items, onClick }) => {
   return (
     <>
-      {items.map(({ id, webformatURL, largeImageURL, tags }) => (
-        <Li key={id}>
-          <Img
-            src={webformatURL}
-            alt={tags}
-            onClick={() => onClick(largeImageURL)}
-          />
-        </Li>
-      ))}
+      <Ul>
+        <PictureItem items={items} onClick={onClick} />
+      </Ul>
     </>
   );
-};
-
-PictureItem.propTypes = {
-  items: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.number.isRequired,
-      webformatURL: PropTypes.string.isRequired,
-      largeImageURL: PropTypes.string.isRequired,
-      tags: PropTypes.string,
-    })
-  ),
-  onClick: PropTypes.func.isRequired,
 };

@@ -1,18 +1,5 @@
 import styled from 'styled-components';
 
-export const Ul = styled.ul`
-  display: grid;
-  max-width: calc(100vw - 48px);
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-  grid-gap: 16px;
-  margin-top: 0;
-  margin-bottom: 0;
-  padding: 0;
-  list-style: none;
-  margin-left: auto;
-  margin-right: auto;
-`;
-
 export const Li = styled.li`
   border-radius: 2px;
   box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2),
@@ -24,9 +11,7 @@ export const Img = styled.img`
   height: 260px;
   object-fit: cover;
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  cursor: pointer;
-
-  & :hover {
+  :hover {
     transform: scale(1.03);
     cursor: zoom-in;
   }

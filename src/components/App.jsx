@@ -4,7 +4,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import { Component } from 'react';
 import { PixabaySearch } from './PixabaySearch/PixabaySearch';
 import { PixabayPictures } from 'services/api';
-import { Pictures } from './Pictures/Pictures';
+import { Pictures } from './PictureItem/PictureItem';
 import { Loader } from './Loader/Loader';
 import { Modal } from './Modal/Modal';
 import { BtnLoadMore } from './BtnLoadMore/BtnLoadMore';
@@ -24,18 +24,12 @@ export class App extends Component {
     if (values.query === '') {
       return toast.warning('Please, enter Your search query');
     }
-    try {
       this.setState({
         q: values.query,
         pictures: [],
         isLoading: true,
         page: 1,
       });
-    } catch (error) {
-      console.log(error);
-    } finally {
-      this.setState({ isLoading: false });
-    }
   };
 
   async componentDidUpdate(_, prevState) {
